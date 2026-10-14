@@ -1,7 +1,3 @@
-# Cat branding
+# Siamese Cat identity
 
-Generated using the built-in imagegen tool with the user's supplied avatar screenshot as a style/composition reference. Saved as public/logo.png; favicon and touch-icon derivatives retain the same design.
-
-Final prompt: One square app icon, warm orange #f58c43 rounded background, cream #eee9df geometric CAT head, short pointed triangular ears, thick dark charcoal #302c25 outline and two black capsule eyes. Tilted and cropped at bottom/right like the reference. Minimal shapes; no nose, mouth, stripes, text, website UI or tooltip. Reference shows a rabbit but the subject remains a cat as requested.
-
-Homepage starts with Orange Tabby, including its live geometry, palette and orange background. All hero creation buttons open the corresponding cat breed. OneWorks branding and links are removed from the public homepage; third-party code identifiers and license notices are retained.
+The current logo is derived from the native SVG of the shared Siamese Cat default, rather than a separately generated illustration. Source: public/logo.svg. PNG, favicon, touch-icon and Open Graph assets use the same geometry and colours. Homepage thumbnail: src/avatarPresetSnapshots/home-siamese-cat.svg. The earlier generated cream cat tile has been replaced.

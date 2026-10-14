@@ -24,6 +24,7 @@ import type { AvatarViewState } from './InteractiveAvatar'
 import type { HomeTemplateId } from './avatarHome'
 import { getAvatarCatBreedTemplate, resolveAvatarCatBreedTemplate } from './avatarBreedTemplates'
 import { resolveAvatarBreedPalette } from './avatarBreedTone'
+import { createPrettyAvatarDefaultState } from './defaultAvatar'
 
 interface HomeAvatarPreviewProps {
   readonly template: HomeTemplateId
@@ -57,13 +58,15 @@ const getFrameShadow = (
 }
 
 const HomeAvatarPreview = ({ template, breed }: HomeAvatarPreviewProps) => {
+  const sharedDefault = useMemo(() => template === 'cat' && breed === 'siamese' ? createPrettyAvatarDefaultState() : null, [template, breed])
   const breedTemplate = template === 'cat' ? getAvatarCatBreedTemplate(breed) : null
   const breedSeed = 'v1-pretty-avatar-2-orange-cat'
   const resolvedBreed = useMemo(() => breedTemplate ? resolveAvatarCatBreedTemplate(breedTemplate, breedSeed) : null, [breedTemplate])
   const scene = useMemo(() => {
     const preset = getAvatarEntityPresetScene(template)
+    if (sharedDefault) return sharedDefault
     return preset && breed === 'orange-tabby' ? { ...preset, cameraBackground: '#f58c43' } : preset
-  }, [template, breed])
+  }, [template, breed, sharedDefault])
   const baseFaceStyle = useMemo(() => getAvatarEntityPresetFaceStyle(template), [template])
   const animationFrameRef = useRef<number | null>(null)
   const [animationId, setAnimationId] = useState<AvatarAnimationPresetId | null>(null)
@@ -88,7 +91,7 @@ const HomeAvatarPreview = ({ template, breed }: HomeAvatarPreviewProps) => {
 
   if (scene == null || baseFaceStyle == null || faceStyle == null || viewState == null) return null
 
-  const palette = breedTemplate && resolvedBreed ? resolveAvatarBreedPalette(resolvedBreed.paletteId, breedSeed, breedTemplate.seedDomain) : getAvatarPalette(scene.paletteId)
+  const palette = sharedDefault ? getAvatarPalette(sharedDefault.paletteId) : breedTemplate && resolvedBreed ? resolveAvatarBreedPalette(resolvedBreed.paletteId, breedSeed, breedTemplate.seedDomain) : getAvatarPalette(scene.paletteId)
 
   const playRandomAnimation = () => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -145,7 +148,7 @@ const HomeAvatarPreview = ({ template, breed }: HomeAvatarPreviewProps) => {
         avatarShadowStyle={scene.avatarShadowStyle}
         backgroundStyle={scene.backgroundStyle}
         bodyShape='sphere'
-        entityParts={resolvedBreed?.entityParts ?? createAvatarEntityParts(template)}
+        entityParts={sharedDefault?.entityParts ?? resolvedBreed?.entityParts ?? createAvatarEntityParts(template)}
         entityPreset={template}
         faceStyleTransitionsEnabled={false}
         faceStyle={faceStyle}

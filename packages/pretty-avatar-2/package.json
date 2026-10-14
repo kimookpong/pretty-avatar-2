@@ -1,0 +1,51 @@
+{
+  "name": "pretty-avatar-2",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Geometric React avatars with a Siamese Cat on an orange background",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimookpong/pretty-avatar-2.git",
+    "directory": "packages/pretty-avatar-2"
+  },
+  "homepage": "https://kimookpong.github.io/pretty-avatar-2/",
+  "exports": {
+    ".": {
+      "types": "./dist/types/packages/pretty-avatar-2/src/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/types/packages/pretty-avatar-2/src/core.d.ts",
+      "import": "./dist/core.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./dist/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": ">=18.3.0 <20",
+    "react-dom": ">=18.3.0 <20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "avatar",
+    "react",
+    "siamese",
+    "svg",
+    "typescript",
+    "animation"
+  ],
+  "scripts": {
+    "prepack": "npm --prefix ../.. run build:library && npm --prefix ../.. run check:library"
+  }
+}

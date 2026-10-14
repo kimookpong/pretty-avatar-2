@@ -475,6 +475,7 @@ const TH_TRANSLATIONS: Readonly<Record<string, string>> = {
   "Golden Retriever": "โกลเดนรีทรีฟเวอร์",
   "Border Collie": "บอร์เดอร์คอลลี่",
   "Dalmatian": "ดัลเมเชียน",
+  "Siamese Cat": "แมวสยาม",
   "Siamese": "แมวสยาม",
   "British Shorthair": "บริติชชอร์ตแฮร์",
   "Russian Blue": "รัสเซียนบลู",

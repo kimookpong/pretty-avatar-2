@@ -1000,7 +1000,8 @@ const useAnimatedFaceStyle = (target: AvatarFaceStyle, transitionsEnabled: boole
   const animatedStyleRef = useRef(target)
   const animationFrameRef = useRef<number>()
   const shouldAnimate = transitionsEnabled &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    typeof window !== 'undefined' &&
+    (typeof window.matchMedia !== 'function' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches)
 
   useEffect(() => {
     if (!shouldAnimate) {

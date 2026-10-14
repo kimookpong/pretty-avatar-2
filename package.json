@@ -25,7 +25,10 @@
     "typecheck": "tsc -p tsconfig.app-source.json --noEmit --pretty false",
     "typecheck:npm": "tsc -p tsconfig.json --noEmit --pretty false",
     "typecheck:sdk": "pnpm build:sdk && pnpm --filter './packages/*' typecheck",
-    "check:pages": "node scripts/check-pages-build.mjs"
+    "check:pages": "node scripts/check-pages-build.mjs",
+    "build:library": "vite build --config vite.library.config.ts && node scripts/build-pretty-avatar-types.mjs",
+    "pack:library": "npm pack ./packages/pretty-avatar-2 --pack-destination artifacts",
+    "check:library": "node scripts/check-pretty-avatar-package.mjs"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.3.0",

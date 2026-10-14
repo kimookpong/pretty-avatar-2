@@ -49,3 +49,16 @@ The language selector offers only English and Thai. Homepage and editor labels h
 `npm test` checks the avatar engine, editor, timeline and retained framework adapters. The upstream SDK release/provenance workflow suites are excluded because this website does not ship those npm publishing workflows. Production builds also verify the canonical URL, Pages asset paths and referenced files with `npm run check:pages`.
 
 The studio uses the original sidebar layout, including independent collapse and resize controls and the timeline below the canvas. Language menus support arrow keys and Escape, the export drawer shows the SVG source and traps focus, and the website uses a light-only appearance.
+
+## React package
+
+The publishable package is `packages/pretty-avatar-2`. Build and verify it with `npm run build:library` and `npm run check:library`; create a local installable tarball with `npm run pack:library`. npm publication is managed manually by the user; see [publishing instructions](docs/npm-publishing.md). GitHub Actions builds an installable tarball artifact and deploys only the website.
+
+```tsx
+import { PrettyAvatar } from 'pretty-avatar-2'
+import 'pretty-avatar-2/style.css'
+
+<PrettyAvatar size={256} />
+```
+
+The no-props default is **Siamese Cat** on orange `#f58c43`. `src/defaultAvatar.ts` supplies the homepage, Studio launch and component. Logo and thumbnail SVGs derive from the same rendered character. `pretty-avatar-2/core` provides framework-neutral model utilities and the shared default for Node.

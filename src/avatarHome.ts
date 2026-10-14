@@ -3,7 +3,7 @@ import {
   AVATAR_ENTITY_PRESET_SNAPSHOT_URLS,
   AVATAR_PIXEL_STYLE_PRESET_SNAPSHOT_URLS
 } from './avatarPresetSnapshots'
-import homeOrangeCatSnapshot from './avatarPresetSnapshots/home-orange-cat.svg?url'
+import homeSiameseCatSnapshot from './avatarPresetSnapshots/home-siamese-cat.svg?url'
 import type { AvatarEffectStylePresetId } from './avatarEffectStylePresets'
 import { AVATAR_EFFECT_STYLE_PRESETS } from './avatarEffectStylePresets'
 
@@ -34,9 +34,9 @@ export interface HomeTemplate {
 
 export const HOME_TEMPLATES: readonly HomeTemplate[] = HOME_TEMPLATE_IDS.map(id => ({
   id,
-  label: id === 'cat' ? 'Orange Tabby' : getHomeTemplateLabel(id),
-  snapshot: id === 'cat' ? homeOrangeCatSnapshot : AVATAR_ENTITY_PRESET_SNAPSHOT_URLS[id],
-  breed: id === 'cat' ? 'orange-tabby' : undefined
+  label: id === 'cat' ? 'Siamese Cat' : getHomeTemplateLabel(id),
+  snapshot: id === 'cat' ? homeSiameseCatSnapshot : AVATAR_ENTITY_PRESET_SNAPSHOT_URLS[id],
+  breed: id === 'cat' ? 'siamese' : undefined
 }))
 
 export interface HomeExploreTemplate {
@@ -68,8 +68,8 @@ const homeExploreTemplates = [
     entity: template.id,
     breed: null,
     effectStyle: null,
-    label: template.label,
-    snapshot: template.snapshot
+    label: getHomeTemplateLabel(template.id),
+    snapshot: AVATAR_ENTITY_PRESET_SNAPSHOT_URLS[template.id]
   })),
   ...Object.entries(AVATAR_BREED_PRESET_SNAPSHOT_URLS).map(([id, snapshot]) => {
     const [entity = '', breed = ''] = id.split('--')

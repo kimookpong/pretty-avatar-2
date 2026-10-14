@@ -52,7 +52,7 @@
       ],
       "presetId": "idle",
       "progress": 0.42,
-      "sourceFingerprint": "e3378083d2632f390e344eebb8a195bd71b5b8acb875532ad6eed0988a998795"
+      "sourceFingerprint": "db96c22af9a9d0c1f45ab506043283c90ce9bcaa8475d7a9cc7b270d82738ed6"
     },
     {
       "asset": "blink.svg",
@@ -91,7 +91,7 @@
       ],
       "presetId": "blink",
       "progress": 0.5,
-      "sourceFingerprint": "433e60d3270aeb3d61ef56450beca44d2aae3b5a649f396ec88907d6bcc72eb6"
+      "sourceFingerprint": "41be1d52554784bc18f6ee98edd0669f0b675c6a19461289a56640ec79a0affb"
     },
     {
       "asset": "wink.svg",
@@ -130,7 +130,7 @@
       ],
       "presetId": "wink",
       "progress": 0.5,
-      "sourceFingerprint": "48bcc9001cab240041658d8e2ed92aefaed760f2b45bcb5b774debe666bf8507"
+      "sourceFingerprint": "5f75199060f2befe3b998cbeeacb51301bf9892cc67c7ff0cb67f889488bb107"
     },
     {
       "asset": "listening.svg",
@@ -169,7 +169,7 @@
       ],
       "presetId": "listening",
       "progress": 0.22,
-      "sourceFingerprint": "b0d509c4f1de223e84ec16e69e44b6b5289049cd2d1652f2ec46174fec647460"
+      "sourceFingerprint": "2e813cb6e9cdac3998b1f9a1b55aa54fa9898732229b935fd942b82bc7fa6d32"
     },
     {
       "asset": "nod.svg",
@@ -213,7 +213,7 @@
       ],
       "presetId": "nod",
       "progress": 0.34,
-      "sourceFingerprint": "841bbe73d45c75d905c53516dbbc5a50e6c1fe79747c7fa2ba403034a66f2dc7"
+      "sourceFingerprint": "d7c47163d271c65874e21f31c43db916a35e2a28ccaefddb9060018dd6e25baa"
     },
     {
       "asset": "thinking.svg",
@@ -252,7 +252,7 @@
       ],
       "presetId": "thinking",
       "progress": 0.48,
-      "sourceFingerprint": "d948522867da9e13132c4d0fedde19f2b8d858500fd60a1ef5fbd6b39977e16c"
+      "sourceFingerprint": "5bb7a78c7470e7285823e86a59d5bd016d5ce657e85cc96847427c906ebeccae"
     },
     {
       "asset": "searching.svg",
@@ -296,7 +296,7 @@
       ],
       "presetId": "searching",
       "progress": 0.34,
-      "sourceFingerprint": "4d4f6f26fb312f8d631425884e9c57894865555d19ae06d490bcb263979c6a00"
+      "sourceFingerprint": "c736d18c77a9dfad5bc85de7236c230dfcea7e3b6fe21d2c102690fea49bbfbe"
     },
     {
       "asset": "working.svg",
@@ -340,7 +340,7 @@
       ],
       "presetId": "working",
       "progress": 0.42,
-      "sourceFingerprint": "327339652a1cd99b9f76e44917b840bbe77d150659e6277293ac30a1d38ec6c4"
+      "sourceFingerprint": "44fae36be288112f2dde187ba3ef7487b25c4b3c230c3e362a074c3247631026"
     },
     {
       "asset": "happy.svg",
@@ -384,7 +384,7 @@
       ],
       "presetId": "happy",
       "progress": 0.58,
-      "sourceFingerprint": "f220bb018a30ad9cb76dc1fefa6fb7dbaca35e679e42d3cbb9f06d3cd7a71c08"
+      "sourceFingerprint": "82e61a1721d2dc2d21ac623ca31b4a111fc1d1b4e3d7a94699e7ece8729e6122"
     },
     {
       "asset": "curious.svg",
@@ -413,7 +413,7 @@
       ],
       "presetId": "curious",
       "progress": 0.24,
-      "sourceFingerprint": "e1309c756aa38ad9ca64ea93f8e508d994522f1324519324e04b391023f8f904"
+      "sourceFingerprint": "0201437c8eca9e91875eaacd1cd8ab2832aaf406f4086b9427256f29c852c84e"
     },
     {
       "asset": "surprised.svg",
@@ -452,7 +452,7 @@
       ],
       "presetId": "surprised",
       "progress": 0.31,
-      "sourceFingerprint": "22f80b549e26d01653ded3a599f6610001adcd931bc5d90c6a84d18073215ca3"
+      "sourceFingerprint": "a526796eaf3905ff91e38fecfc60aaa27875015ab6455d2506a78e9cb244088c"
     },
     {
       "asset": "bored.svg",
@@ -481,7 +481,7 @@
       ],
       "presetId": "bored",
       "progress": 0.72,
-      "sourceFingerprint": "a0f2de1813d6ecf9e6cde97f2b4bbb2a1bac6af89c3c69d266ea1b4608a69068"
+      "sourceFingerprint": "57eff7f6701396bda1ac314dd21e6a9879c36769d987859f29574f8cb3b2fced"
     },
     {
       "asset": "sad.svg",
@@ -520,7 +520,7 @@
       ],
       "presetId": "sad",
       "progress": 0.48,
-      "sourceFingerprint": "475bdfba9ca911be3de286d58921affcee1c71d609e0eb406a27ddd6d1653cd4"
+      "sourceFingerprint": "cd1132fdbe14db733828d89a2f44df1c2698c2821573b06c2dc19dd86bd36761"
     },
     {
       "asset": "angry.svg",
@@ -564,7 +564,7 @@
       ],
       "presetId": "angry",
       "progress": 0.49,
-      "sourceFingerprint": "e04bd0838aadb0f40a82fcc39b223a0b704e1b7833d9ad5775815d8b48407748"
+      "sourceFingerprint": "76a25d4cd201cb529c7fdc2a0654b82845f836d46ff65ccd5a63dc0c4afb011a"
     },
     {
       "asset": "shocked.svg",
@@ -608,7 +608,7 @@
       ],
       "presetId": "shocked",
       "progress": 0.42,
-      "sourceFingerprint": "ebfad4670b529b883fbc4d916ed2c6ab4cdaf7ac6d67c36ad27a32061df51301"
+      "sourceFingerprint": "f5e9e82e5659b18679ef3e554792da4e689eca82b65f619f2b814b95f3d3cb8f"
     },
     {
       "asset": "petrified.svg",
@@ -647,7 +647,7 @@
       ],
       "presetId": "petrified",
       "progress": 0.72,
-      "sourceFingerprint": "a1da5fd45a07c812aaecfea08067d8db08f228af5176dc350b6303a080308ea3"
+      "sourceFingerprint": "b72c8d4e3e8d67daa13953b33bcf78b69fb5c75f057520e41c70d69165a16516"
     },
     {
       "asset": "laughing.svg",
@@ -696,7 +696,7 @@
       ],
       "presetId": "laughing",
       "progress": 0.43,
-      "sourceFingerprint": "ac208c9d8b612c27028aef5b871ec0b43617524a312476259fe7900a64ad8772"
+      "sourceFingerprint": "7361a1ab2df90ea2605860e042a5eeaa7a293a89772e7a2520a4ee045b2520f0"
     },
     {
       "asset": "playful.svg",
@@ -730,7 +730,7 @@
       ],
       "presetId": "playful",
       "progress": 0.48,
-      "sourceFingerprint": "9c510e394dfbd6a62d4ef43f15c44351340ec9c349ca8d491f12ccc5d2bcd12f"
+      "sourceFingerprint": "e55399d7214ed832aa6f6090eb4a48e344541150f7759867b815539e6c0cbbd6"
     },
     {
       "asset": "excited.svg",
@@ -779,7 +779,7 @@
       ],
       "presetId": "excited",
       "progress": 0.39,
-      "sourceFingerprint": "f349322e859b58d363a5a3ddfa5ba0b1bf85ae8f9ad9f7c711a92f8bf82da49d"
+      "sourceFingerprint": "5e1383bf893724416044af0beba6fab3c922e94f11f01b95134b9b4961962b1b"
     },
     {
       "asset": "celebrate.svg",
@@ -833,7 +833,7 @@
       ],
       "presetId": "celebrate",
       "progress": 0.38,
-      "sourceFingerprint": "3f0927df1305b63e98e754b83c3b3462c07d3d1e4e8f24ef2c9bf456f08ebe07"
+      "sourceFingerprint": "e426adf7137b937918e5338ddcb7acad2d25365148d4d66c0ee8c74c6e7e2759"
     },
     {
       "asset": "bear-alert-morph.svg",
@@ -917,7 +917,7 @@
       ],
       "presetId": "bear-alert-morph",
       "progress": 0.54,
-      "sourceFingerprint": "c56afdac52caf02ec243ed8cfd35d21a83bcdb888fafe5094d44114335c087a9"
+      "sourceFingerprint": "a301a687c455677236cf5806ac6c0a39c91b3efddb67a8083394d42691d0db3a"
     },
     {
       "asset": "bear-loading-morph.svg",
@@ -1006,7 +1006,7 @@
       ],
       "presetId": "bear-loading-morph",
       "progress": 0.32,
-      "sourceFingerprint": "663b0e1500971b9ef0c822328794791122bc539f5e4e49d380da8a8722eab2e8"
+      "sourceFingerprint": "35d2722f26098b9c0e52e88ce74447660327c52b1c1cf06f85a329f9ad376d37"
     },
     {
       "asset": "bear-notification-morph.svg",
@@ -1055,7 +1055,7 @@
       ],
       "presetId": "bear-notification-morph",
       "progress": 0.42,
-      "sourceFingerprint": "cde54f62546a424ef53bdd412ee23fdee3868f48b9a8e3a4b0fc4f94997072f5"
+      "sourceFingerprint": "985497d4e7c9aafb4f3d6a4a0ac31aa318e672a41a2ed28627d6d5dc1aed6a31"
     },
     {
       "asset": "bear-sleep-morph.svg",
@@ -1114,7 +1114,7 @@
       ],
       "presetId": "bear-sleep-morph",
       "progress": 0.55,
-      "sourceFingerprint": "87380b82e3998643d4469f42a42caf165752cfe609edab47ea6d0189667e8569"
+      "sourceFingerprint": "a071a99e5dcd97b16a334d89d6b29ff2c68792c2431ee9c825106f717b39a488"
     },
     {
       "asset": "bear-burst-morph.svg",
@@ -1198,10 +1198,10 @@
       ],
       "presetId": "bear-burst-morph",
       "progress": 0.54,
-      "sourceFingerprint": "33512c56c6baa07f2c75b028037231d12061d8da75b46bee753dc2e330c6c1a7"
+      "sourceFingerprint": "1df63dde89e9f9617e99f40f3b1bc830d6d98e9625d9560b6e7f58e30bb3795e"
     }
   ],
   "representativeEntity": "bear",
-  "sourceFingerprint": "3f9f5c30d45955abf13f0529dcb58599b8103e5797afd8998727e03092b7d125",
+  "sourceFingerprint": "ec2a003a7a9113eba32ed2c2db1235edadbde5b7b2a5b1ca41e02053f684b257",
   "version": 1
 }

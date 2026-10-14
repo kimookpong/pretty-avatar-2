@@ -3,3 +3,6 @@ app-source/
 dist/
 dist-types/
 node_modules/
+
+packages/pretty-avatar-2/dist/
+artifacts/*.tgz

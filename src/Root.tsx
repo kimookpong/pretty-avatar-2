@@ -116,22 +116,8 @@ const Root = () => {
       onCreate={template => openEditor(`?template=${template}`)}
       onCreateBreed={(entity, breed) => {
         const params = new URLSearchParams({ entity, breed })
-        if (entity === 'cat' && breed === 'orange-tabby') {
-          void Promise.all([import('./avatarBreedTemplates'), import('./avatarEntityPresets')]).then(([breeds, entities]) => {
-            const seed = 'v1-pretty-avatar-2-orange-cat'
-            const template = breeds.getAvatarCatBreedTemplate(breed)!
-            const resolved = breeds.resolveAvatarCatBreedTemplate(template, seed)
-            const scene = entities.getAvatarEntityPresetScene('cat')!
-            params.set('cameraBg', '#f58c43')
-            params.set('camera', '1')
-            params.set('seed', seed)
-            params.set('palette', resolved.paletteId)
-            params.set('entityParts', entities.serializeAvatarEntityParts(resolved.entityParts))
-            params.set('outlineColor', scene.avatarOutlineStyle.color)
-            params.set('nose', '1')
-            for (const [key, value] of Object.entries(scene.viewState)) params.set(key, String(value))
-            openEditor(`?${params.toString()}`)
-          })
+        if (entity === 'cat' && breed === 'siamese') {
+          void import('./defaultAvatar').then(({createPrettyAvatarDefaultQuery}) => openEditor(createPrettyAvatarDefaultQuery()))
           return
         }
         openEditor(`?${params.toString()}`)
