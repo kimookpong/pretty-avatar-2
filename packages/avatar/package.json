@@ -1,0 +1,33 @@
+{
+  "name": "@oneworks/avatar",
+  "version": "1.0.0-rc.9",
+  "description": "Framework-neutral OneWorks 3D Avatar definitions, catalog, and animation runtime",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oneworks-ai/avatar.git",
+    "directory": "packages/avatar"
+  },
+  "exports": {
+    ".": {
+      "__oneworks__": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh-Hans.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

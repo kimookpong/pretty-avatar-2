@@ -1,0 +1,38 @@
+{
+  "name": "@oneworks/avatar-vue",
+  "version": "1.0.0-rc.9",
+  "description": "Vue renderer and embeddable editor for OneWorks 3D Avatar",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": ["./dist/style.css"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oneworks-ai/avatar.git",
+    "directory": "packages/vue"
+  },
+  "exports": {
+    ".": {
+      "__oneworks__": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./style.css": {
+      "__oneworks__": "./src/style.css",
+      "default": "./dist/style.css"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md", "README.zh-Hans.md"],
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit --pretty false"
+  },
+  "dependencies": {
+    "@oneworks/avatar": "workspace:*",
+    "@oneworks/avatar-web": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": ">=3.5.0 <4"
+  },
+  "publishConfig": { "access": "public" }
+}

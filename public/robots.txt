@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /pretty-avatar-2/
+Sitemap: https://kimookpong.github.io/pretty-avatar-2/sitemap.xml

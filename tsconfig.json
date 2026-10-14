@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "composite": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist-types",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "types": [
+      "react",
+      "react-dom",
+      "vite/client"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

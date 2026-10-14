@@ -1,0 +1,57 @@
+{
+  "name": "pretty-avatar-2",
+  "type": "module",
+  "version": "1.0.0-rc.9",
+  "private": true,
+  "description": "A playful geometric avatar studio with a pastel pretty-avatar theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimookpong/pretty-avatar-2"
+  },
+  "scripts": {
+    "animation-covers:check": "node scripts/generate-avatar-animation-preset-covers.mjs --check",
+    "animation-covers:generate": "node scripts/generate-avatar-animation-preset-covers.mjs",
+    "build": "npm run animation-covers:check && npm run typecheck && vite build && npm run check:pages",
+    "build:app-source": "npm run build",
+    "build:npm": "pnpm animation-covers:check && tsc -p tsconfig.json --noEmit --pretty false && vite build",
+    "build:sdk": "pnpm --filter './packages/*' build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "snapshots:pixel": "node scripts/generate-avatar-pixel-style-snapshots.mjs",
+    "smoke:sdk": "node scripts/smoke-sdk-packages.mjs",
+    "test": "vitest run",
+    "test:timeline:e2e": "node scripts/verify-avatar-timeline-e2e.mjs",
+    "test:timeline:performance": "node scripts/verify-avatar-timeline-performance.mjs",
+    "typecheck": "tsc -p tsconfig.app-source.json --noEmit --pretty false",
+    "typecheck:npm": "tsc -p tsconfig.json --noEmit --pretty false",
+    "typecheck:sdk": "pnpm build:sdk && pnpm --filter './packages/*' typecheck",
+    "check:pages": "node scripts/check-pages-build.mjs"
+  },
+  "dependencies": {
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-sans-thai": "^5.3.0",
+    "@fontsource/nunito": "^5.3.0",
+    "@material-symbols/svg-400": "0.44.8",
+    "@oneworks/avatar": "file:packages/avatar",
+    "@oneworks/route-layout": "beta",
+    "gifenc": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.2",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "jpeg-js": "^0.4.4",
+    "jsdom": "^26.1.0",
+    "markdown-it": "^15.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.97.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vite-plugin-dts": "^5.1.2",
+    "vitest": "^5.0.4",
+    "vue": "^3.5.21",
+    "vue-tsc": "^2.2.12"
+  }
+}

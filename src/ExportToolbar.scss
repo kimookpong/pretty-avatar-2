@@ -1,0 +1,190 @@
+@use './EditorMenu' as editor-menu;
+
+.avatar-export-toolbar {
+  position: relative;
+
+  &__trigger {
+    display: inline-grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bg-color) 90%, transparent);
+    color: var(--sub-text-color);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+
+    &[aria-expanded='true'] {
+      border-color: var(--primary-color);
+      background: var(--primary-soft-bg);
+      color: var(--primary-text-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: -2px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 8;
+    top: calc(100% + 8px);
+    right: 0;
+    @include editor-menu.surface;
+    overflow: hidden;
+    backdrop-filter: blur(18px) saturate(145%);
+  }
+
+  &__size-row,
+  &__menu-action {
+    display: grid;
+    min-height: 38px;
+    grid-template-columns: 22px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 6px;
+    padding: 0 9px;
+    background: transparent;
+    color: var(--sub-text-color);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__size-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+    margin-bottom: 4px;
+    padding-right: 0;
+    padding-bottom: 4px;
+  }
+
+  &__size-control {
+    position: relative;
+    width: 104px;
+    height: 30px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 9px;
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+
+  &__size {
+    width: 100%;
+    height: 30px;
+    appearance: none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0 30px 0 10px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: -2px;
+    }
+
+    &:disabled {
+      color: var(--placeholder-color);
+      cursor: not-allowed;
+      opacity: .52;
+    }
+  }
+
+  &__menu-action {
+    @include editor-menu.item;
+
+    &:disabled {
+      color: var(--placeholder-color);
+      cursor: not-allowed;
+      opacity: .52;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &[data-copied='true'] {
+      background: var(--primary-soft-bg);
+      color: var(--primary-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: -2px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+  }
+}
+
+@container avatar-stage (max-width: 224px) {
+  .avatar-export-toolbar__menu {
+    position: fixed;
+    top: 66px;
+    right: auto;
+    left: 8px;
+  }
+}
+
+.pretty-export-backdrop {
+  position:fixed;inset:0;z-index:1000;display:flex;justify-content:flex-end;
+  background:#223c4155;backdrop-filter:blur(3px);
+}
+.pretty-export-drawer {
+  display:flex;flex-direction:column;gap:18px;width:min(520px,100%);height:100dvh;
+  padding:28px;background:var(--bg-color,#fffaf0);color:var(--text-color,#332e27);
+  border-left:1px solid var(--border-color);box-shadow:-16px 0 60px #253c4120;overflow:auto;
+  button,select,textarea {font:inherit;}
+  button {cursor:pointer;}
+  button:disabled {opacity:.45;cursor:not-allowed;}
+}
+.pretty-export-header {display:flex;justify-content:space-between;align-items:center;gap:16px;
+  p {margin:0 0 6px;color:var(--primary-color);font-size:11px;}
+  h2 {margin:0;font:600 28px 'Fraunces','IBM Plex Sans Thai',serif;}
+  button {width:36px;height:36px;background:transparent;border:1px solid var(--border-color);border-radius:12px;color:inherit;font-size:24px;}
+}
+.pretty-export-summary {display:flex;align-items:center;gap:20px;padding:16px;border:1px solid var(--border-color);border-radius:18px;
+  > div:last-child {min-width:0;flex:1;}
+  p {margin:0 0 12px;font-size:13px;}
+  label {display:block;margin-bottom:6px;font-size:11px;color:var(--sub-text-color);}
+  select {width:100%;padding:8px;background:var(--bg-color);border:1px solid var(--border-color);border-radius:8px;color:inherit;font-size:12px;}
+}
+.pretty-export-preview {width:96px;height:96px;flex:0 0 96px;overflow:hidden;border-radius:14px;background:var(--primary-soft-bg);
+  img {display:block;width:100%;height:100%;object-fit:contain;}
+}
+.pretty-export-code-heading {display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:700;
+  button {background:var(--primary-soft-bg);color:var(--primary-color);border:1px solid var(--border-color);border-radius:8px;padding:7px 12px;font-size:11px;}
+}
+.pretty-export-drawer .pretty-export-code {flex:1;min-height:160px;width:100%;resize:none;padding:14px;border:1px solid var(--border-color);border-radius:14px;background:#e8eddf;color:#31565d;font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;}
+.pretty-export-actions {display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  button {padding:12px;border:1px solid var(--border-color);border-radius:12px;background:transparent;color:inherit;font-size:12px;font-weight:700;}
+  .pretty-export-primary {grid-column:1 / -1;background:var(--text-color);color:var(--bg-color);border-color:var(--text-color);}
+}
+.pretty-export-note,.pretty-export-status {margin:0;font-size:11px;color:var(--sub-text-color);line-height:1.5;}
+.pretty-export-status[role=alert] {color:#a24436;}
+@media(max-width:520px) {.pretty-export-drawer {padding:20px;gap:14px;}.pretty-export-preview {width:80px;height:80px;flex-basis:80px;}}
