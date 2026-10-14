@@ -1,4 +1,5 @@
 import './HomePage.scss'
+import { AVATAR_NPM_INSTALL, createDefaultComponentExample } from './avatarComponentUsage'
 import { lazy, Suspense, useMemo, useState } from 'react'
 import { HomeHeaderActions } from './HomeHeaderActions'
 import { HOME_EXPLORE_TEMPLATES, HOME_TEMPLATES } from './avatarHome'
@@ -58,6 +59,7 @@ export const HomePage = ({ onCreate, onCreateBreed, onCreateEffectStyle, onSurpr
       {filtered.length>limit && <button className='pretty-secondary pretty-load-more' onClick={() => setLimit(x=>x+24)}>{t('Meet more friends')} ↓</button>}
     </section>
     <section className='pretty-invitation'><span aria-hidden='true'>✳</span><div><h2>{t('Something only you could make.')}</h2><p>{t('Start small. Try things. Your next favorite character is a few clicks away.')}</p></div><button className='pretty-primary' onClick={openSelected}>{t('Let’s make a character')} ↗</button></section>
+    <section className='pretty-developer-guide' id='usage' aria-labelledby='pretty-usage-title'><div><p className='pretty-section-number'>npm / React</p><h2 id='pretty-usage-title'>{t('Use it in your app')}</h2><p>{t('Add a little character to your React app. Start with Siamese Cat, or bring your own from the studio.')}</p><a href='https://github.com/kimookpong/pretty-avatar-2/blob/main/docs/component-usage.md'>{t('Read the component guide')} ↗</a></div><div><pre><code>{AVATAR_NPM_INSTALL}</code></pre><pre><code>{createDefaultComponentExample()}</code></pre></div></section>
     <footer className='pretty-site-footer'><a className='pretty-brand' href={import.meta.env.BASE_URL}>pretty-avatar-2</a><p>{t('A tiny studio for big personalities')}</p><a href='https://github.com/kimookpong/pretty-avatar-2'>GitHub ↗</a></footer>
   </main>
 }

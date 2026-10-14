@@ -20,4 +20,5 @@ for(const entry of Object.values(manifest.exports)){
   for(const file of typeof entry==='string'?[entry]:Object.values(entry))assert.ok(fs.existsSync(path.join('packages/pretty-avatar-2',file)),`Missing export ${file}`)
 }
 assert.ok(!packed.files.some(f=>f.path.includes('node_modules')||f.path.endsWith('.tgz')))
+for(const asset of ['robots.txt','sitemap.xml','og-image.png','logo.png','favicon.png','favicon.svg','apple-touch-icon.png']) assert.ok(!packed.files.some(f=>f.path===`dist/${asset}`),`Website asset included: ${asset}`)
 console.log(`Verified public exports, Node core, React SSR and ${packed.files.length} packed files (${packed.size} bytes).`)

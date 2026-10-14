@@ -62,3 +62,7 @@ import 'pretty-avatar-2/style.css'
 ```
 
 The no-props default is **Siamese Cat** on orange `#f58c43`. `src/defaultAvatar.ts` supplies the homepage, Studio launch and component. Logo and thumbnail SVGs derive from the same rendered character. `pretty-avatar-2/core` provides framework-neutral model utilities and the shared default for Node.
+
+## Using the npm component
+
+Install with `npm i pretty-avatar-2`. See [component usage](docs/component-usage.md) for React, Next.js, Node and capture examples. Studio has a **Use component** button and an **npm / React** tab in the export drawer; it generates component code and avatar.json from the current character.

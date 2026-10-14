@@ -150,3 +150,5 @@ html .pretty-editor-header .pretty-project-menu img { width:20px;height:20px; }
 
 .pretty-brand-logo { width:36px; height:36px; object-fit:contain; flex-shrink:0; }
 @media(max-width:700px) { .pretty-editor-header .pretty-brand-logo { width:28px;height:28px; } }
+.pretty-developer-guide {max-width:1160px;margin:70px auto;padding:32px;background:#fffaf0;border:1px solid var(--border-color);border-radius:28px;display:grid;grid-template-columns:1fr 1.2fr;gap:32px;h2{font:600 32px 'Fraunces','IBM Plex Sans Thai',serif;}p{line-height:1.8;}a{color:var(--primary-color);}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:18px;border-radius:14px;background:#e8eddf;color:#31565d;font:12px/1.7 ui-monospace,monospace;}}
+@media(max-width:700px){.pretty-developer-guide{margin:32px 16px;padding:22px;grid-template-columns:1fr;}.pretty-component-trigger{padding:8px;}}

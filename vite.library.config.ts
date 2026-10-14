@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 export default defineConfig({
   plugins:[react()],
+  publicDir:false,
   resolve:{alias:{'@oneworks/avatar':path.resolve('packages/avatar/src/index.ts')}},
   build:{
     outDir:'packages/pretty-avatar-2/dist',emptyOutDir:true,target:'es2022',

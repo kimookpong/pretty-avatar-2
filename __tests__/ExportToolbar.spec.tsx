@@ -5,11 +5,13 @@ import type { Root } from 'react-dom/client'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { AvatarLocaleProvider } from '../src/avatarLocale'
 import { ExportToolbar } from '../src/ExportToolbar'
+import type { AvatarDefinition } from '@oneworks/avatar'
+import {createPrettyAvatarDefaultDefinition} from '../src/defaultAvatar'
 let root:Root|undefined,host:HTMLDivElement|undefined
-const render = async (getSource=vi.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg" width="256"><path d="M0 0"/></svg>')) => {
+const render = async (getSource=vi.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg" width="256"><path d="M0 0"/></svg>'), definition?:AvatarDefinition) => {
  host=document.createElement('div');host.id='root';document.body.append(host);root=createRoot(host)
  ;(globalThis as any).IS_REACT_ACT_ENVIRONMENT=true
- const props={copyState:'idle' as const,exportSize:256 as const,gifAvailable:false,gifExportState:'idle' as const,onGetSvgSource:getSource,onCopy:vi.fn().mockResolvedValue(undefined),onDownload:vi.fn(),onDownloadGif:vi.fn().mockResolvedValue(true),onDownloadPng:vi.fn().mockResolvedValue(true),onSizeChange:vi.fn()}
+ const props={definition,copyState:'idle' as const,exportSize:256 as const,gifAvailable:false,gifExportState:'idle' as const,onGetSvgSource:getSource,onCopy:vi.fn().mockResolvedValue(undefined),onDownload:vi.fn(),onDownloadGif:vi.fn().mockResolvedValue(true),onDownloadPng:vi.fn().mockResolvedValue(true),onSizeChange:vi.fn()}
  await act(async()=>root?.render(createElement(AvatarLocaleProvider,{initialLocale:'en',persist:false},createElement(ExportToolbar,props))))
  const trigger=host.querySelector<HTMLButtonElement>('button')!
  await act(async()=>trigger.click())
@@ -17,6 +19,27 @@ const render = async (getSource=vi.fn().mockResolvedValue('<svg xmlns="http://ww
 }
 afterEach(async()=>{if(root)await act(async()=>root?.unmount());host?.remove();root=undefined})
 describe('export drawer',()=>{
+ it('opens component examples for the current avatar and copies the React snippet',async()=>{
+  const copy=vi.fn().mockResolvedValue(undefined)
+  const descriptor=Object.getOwnPropertyDescriptor(navigator,'clipboard')
+  Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:copy}})
+  try {
+    const definition=createPrettyAvatarDefaultDefinition()
+    await render(undefined,definition)
+    await act(async()=>document.querySelector<HTMLButtonElement>('[aria-label="Close export"]')!.click())
+    const trigger=host!.querySelector<HTMLButtonElement>('[aria-label="Use component"]')!
+    await act(async()=>trigger.click())
+    const code=document.querySelector<HTMLTextAreaElement>('[aria-label="Current avatar component"]')!
+    expect(code.value).toContain("import avatar from './avatar.json'")
+    const data=JSON.parse(document.querySelector<HTMLTextAreaElement>('[aria-label="avatar.json"]')!.value)
+    expect(data.scene.appearance.paletteId).toBe('siamese')
+    await act(async()=>code.closest('section')!.querySelector<HTMLButtonElement>('button')!.click())
+    expect(copy).toHaveBeenCalledWith(code.value)
+    await act(async()=>document.querySelector<HTMLButtonElement>('[aria-label="Close export"]')!.click())
+    expect(document.activeElement).toBe(trigger)
+  } finally {if(descriptor)Object.defineProperty(navigator,'clipboard',descriptor);else Reflect.deleteProperty(navigator,'clipboard')}
+ })
+
  it('shows exported SVG in a modal and copies the visible code without closing',async()=>{
   const {props}=await render()
   const modal=document.querySelector('[role=dialog]')!

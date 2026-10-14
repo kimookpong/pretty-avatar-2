@@ -188,3 +188,8 @@
 .pretty-export-note,.pretty-export-status {margin:0;font-size:11px;color:var(--sub-text-color);line-height:1.5;}
 .pretty-export-status[role=alert] {color:#a24436;}
 @media(max-width:520px) {.pretty-export-drawer {padding:20px;gap:14px;}.pretty-export-preview {width:80px;height:80px;flex-basis:80px;}}
+.pretty-component-trigger {display:flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid var(--border-color);border-radius:12px;background:var(--primary-soft-bg);color:var(--primary-color);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;}
+.pretty-export-tabs {display:flex;gap:8px;button{flex:1;padding:9px;border:1px solid var(--border-color);border-radius:10px;background:transparent;color:inherit;font-size:12px;}button[aria-pressed=true]{background:var(--primary-soft-bg);color:var(--primary-color);}}
+.pretty-component-usage {display:grid;gap:20px;p,a{font-size:12px;line-height:1.7;margin:0;}section{display:grid;gap:8px;}.pretty-export-code{min-height:190px;resize:vertical;} .pretty-component-code--install{min-height:54px;height:54px;}.pretty-component-code--definition{height:240px;}}
+.avatar-export-toolbar {display:flex;align-items:center;gap:8px;}
+.pretty-component-trigger {font-size:12px;font-weight:700;font-family:inherit;}

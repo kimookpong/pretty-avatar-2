@@ -5953,6 +5953,7 @@ function App({
   const renderExportToolbar = (showLabel = false) => (
     <ExportToolbar
       showLabel={showLabel}
+      definition={currentDefinition}
       copyState={copyState}
       exportSize={exportSize}
       gifAvailable={timelineGifAvailable || animationTracks.length > 0 || animationKeyframes.length >= 2}

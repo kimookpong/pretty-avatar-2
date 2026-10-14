@@ -1,12 +1,12 @@
 {
   "name": "pretty-avatar-2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "license": "MIT",
   "description": "Geometric React avatars with a Siamese Cat on an orange background",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kimookpong/pretty-avatar-2.git",
+    "url": "git+https://github.com/kimookpong/pretty-avatar-2.git",
     "directory": "packages/pretty-avatar-2"
   },
   "homepage": "https://kimookpong.github.io/pretty-avatar-2/",
